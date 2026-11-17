@@ -24,6 +24,8 @@
 - [x] Memory Fragment item and per-player memory counter.
 - [x] Connect first memory milestone to divine progression.
 - [x] Add initial Observer reactions to memory and power use.
+- [x] Add a one-time craftable Memory Altar as the first survival acquisition route for a Memory Fragment.
+- [ ] Add naturally generated ancient discovery sites and memory chambers.
 - [ ] Add Old Self / Darkness dialogue branches without revealing the twist too early.
 - [ ] Add ancient discovery triggers and dialogue cooldowns.
 - [ ] Add per-player story event history.
