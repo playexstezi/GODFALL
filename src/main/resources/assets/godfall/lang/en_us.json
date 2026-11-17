@@ -12,6 +12,7 @@
   "stage.godfall.creator": "Creator",
   "item.godfall.memory_fragment": "Memory Fragment",
   "item.godfall.memory_fragment.description": "A shard of a memory that should not have survived the forgetting.",
+  "block.godfall.memory_altar": "Memory Altar",
   "key.godfall.rift": "Use Rift ability",
   "key.categories.godfall": "GODFALL"
 }
