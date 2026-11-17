@@ -1,0 +1,13 @@
+{
+  "message.godfall.intro": "Finally. I was beginning to think you would never wake up.",
+  "command.godfall.status": "Creator status",
+  "command.godfall.stage": "Stage: %s",
+  "command.godfall.memories": "Memory fragments: %s",
+  "command.godfall.deaths": "Recorded deaths: %s",
+  "stage.godfall.forgetting": "Forgetting",
+  "stage.godfall.awakening": "Awakening",
+  "stage.godfall.spark": "Spark",
+  "stage.godfall.ascension": "Ascension",
+  "stage.godfall.return": "Return",
+  "stage.godfall.creator": "Creator"
+}
