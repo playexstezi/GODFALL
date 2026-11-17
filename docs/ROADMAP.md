@@ -7,28 +7,33 @@
 - [x] Observer intro and death reactions.
 - [x] Death snapshot persistence.
 - [x] Basic progression state and inspection commands.
-- [ ] First Forge build passes in CI.
+- [x] CI build passes for the base project.
 
 ## Milestone 1 — Echoes of the Past
-- [ ] Echo entity tied to one saved death snapshot.
-- [ ] Reconstruct armor and held-item appearance.
-- [ ] Render the player's own skin with a blue spectral effect.
-- [ ] Make each Echo private to its owner by default.
-- [ ] Add Guide, Warrior, Wanderer and Traitor personalities.
-- [ ] Persistence, reconnect/reload handling and multiplayer tests.
+- [x] Echo entity tied to saved death snapshots.
+- [x] Reconstruct armor and held-item appearance.
+- [x] Capture player skin profile and model type.
+- [x] Owner-only entity tracking.
+- [x] Add Guide, Warrior, Wanderer and Traitor personalities.
+- [ ] Verify exact skin rendering and spectral effect in a live client.
+- [ ] Test reconnect, dimension changes and multiplayer edge cases.
 
 ## Milestone 2 — The Observer and memory
-- [ ] Expand contextual dialogue triggers.
-- [ ] Add Old Self / Darkness branches without revealing the twist too early.
-- [ ] Add memory-fragment items and discovery triggers.
-- [ ] Connect fragment milestones to divine stages.
-- [ ] Add dialogue cooldowns and per-player event history.
+- [x] Memory Fragment item and per-player memory counter.
+- [x] Connect first memory milestone to divine progression.
+- [x] Add initial Observer reactions to memory and power use.
+- [ ] Add Old Self / Darkness dialogue branches without revealing the twist too early.
+- [ ] Add ancient discovery triggers and dialogue cooldowns.
+- [ ] Add per-player story event history.
 
 ## Milestone 3 — First divine abilities
-- [ ] Implement the first Space ability: Rift.
-- [ ] Add server-side validation, cooldowns and configurable costs.
-- [ ] Add client effects and feedback.
-- [ ] Unlock abilities through story events, not ordinary XP.
+- [x] Implement first Space ability: Rift.
+- [x] Server-side unlock validation.
+- [x] Persistent five-second cooldown.
+- [x] Collision and world-border checks for destination.
+- [x] Portal particles, teleport sound and Observer reaction.
+- [ ] Add configurable ability balance and dedicated client keybind.
+- [ ] Implement the next Space ability: Spatial Step.
 
 ## Milestone 4 — World and first story chapter
 - [ ] Ancient structure generation.
