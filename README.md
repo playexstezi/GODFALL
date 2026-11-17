@@ -4,44 +4,40 @@
 
 You are the Creator, but your memories and powers are gone. The world remembers you differently than you remember yourself. An Observer speaks from somewhere inside your thoughts, while echoes of previous deaths may know more than they should.
 
-## Project status
-
-The repository now contains the first development foundation:
+## Implemented foundation
 
 - Forge 1.20.1 project setup with Java 17.
-- Per-player persistent data keyed by UUID in Overworld SavedData.
-- Death-history snapshots: identity, dimension, position, rotation, armor and held items.
-- A server-to-client packet for private dialogue.
-- The Observer's first-awakening line and contextual death dialogue.
-- Initial progression state for memory fragments, divine stages and unlocked ability IDs.
-- /godfall status and /godfall memories commands.
+- UUID-keyed persistent player progression stored in Overworld SavedData.
+- Death snapshots with player identity, dimension, position, rotation, skin profile, armor and held items.
+- Echo entities reconstructed from saved death history, with owner-only tracking, player skin, armor, held items and spectral particles.
+- The Observer's first-awakening line, death reactions and memory/ability reactions.
+- Memory Fragment item that advances personal memory progression.
+- First divine ability, Rift, unlocked by the first memory fragment.
+- Commands: /godfall status, /godfall memories, /godfall rift and operator-only /godfall give_fragment.
 - GitHub Actions build workflow.
 
-This is a foundation, **not yet the complete mod**. Ghost entities, exact skin rendering, abilities, structures, bosses, dimensions, audio and the full story are still planned. Every recorded death is retained as snapshot data for future Echoes; the snapshots are not yet rendered as ghost companions.
+This is an early playable foundation, not the complete mod. The Echo renderer and multiplayer behavior still need in-game verification. Ancient structures, bosses, the Other Side dimension, deeper story branches, audio and the remaining divine abilities are not implemented yet.
 
 ## Build
 
 Requirements: Java 17 JDK, Gradle 8.8 and internet access for the first dependency download.
 
-```bash
-gradle --no-daemon build
-```
+Run: gradle --no-daemon build
 
 The mod jar will be in build/libs/.
 
-Development runs:
-
-```bash
-gradle runClient
-gradle runServer
-```
+Development runs: gradle runClient and gradle runServer.
 
 Accept the Minecraft EULA in the generated run directory before starting the test server.
 
-## Commands
+## Test commands
 
-- /godfall status — current stage, memory fragments and recorded deaths.
-- /godfall memories — restored memory-fragment count.
+- /godfall status — current stage, fragments, deaths and unlocked ability count.
+- /godfall memories — restored memory-fragment count and current stage.
+- /godfall give_fragment — operator-only test command to receive a Memory Fragment.
+- /godfall rift — cast Rift after unlocking it.
+
+Use the Memory Fragment from your hand to absorb it. The first fragment unlocks Rift. Rift moves the player up to five blocks forward, searches for a collision-free destination and has a five-second cooldown.
 
 ## Design principles
 
