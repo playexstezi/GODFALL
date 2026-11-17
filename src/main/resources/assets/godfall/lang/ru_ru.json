@@ -9,5 +9,7 @@
   "stage.godfall.spark": "Искра",
   "stage.godfall.ascension": "Возвышение",
   "stage.godfall.return": "Возвращение",
-  "stage.godfall.creator": "Создатель"
+  "stage.godfall.creator": "Создатель",
+  "item.godfall.memory_fragment": "Фрагмент памяти",
+  "item.godfall.memory_fragment.description": "Осколок воспоминания, которое не должно было пережить забвение."
 }
