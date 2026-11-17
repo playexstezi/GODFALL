@@ -11,5 +11,7 @@
   "stage.godfall.return": "Возвращение",
   "stage.godfall.creator": "Создатель",
   "item.godfall.memory_fragment": "Фрагмент памяти",
-  "item.godfall.memory_fragment.description": "Осколок воспоминания, которое не должно было пережить забвение."
+  "item.godfall.memory_fragment.description": "Осколок воспоминания, которое не должно было пережить забвение.",
+  "key.godfall.rift": "Использовать способность «Разлом»",
+  "key.categories.godfall": "GODFALL"
 }
