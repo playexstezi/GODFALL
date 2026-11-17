@@ -19,6 +19,7 @@ import java.util.UUID;
 public final class GodfallPlayerData {
     private int deathCount;
     private int memoryFragments;
+    private long riftCooldownUntil;
     private boolean introSeen;
     private DivineStage stage = DivineStage.FORGETTING;
     private final Set<String> unlockedAbilities = new HashSet<>();
@@ -26,6 +27,8 @@ public final class GodfallPlayerData {
 
     public int getDeathCount() { return deathCount; }
     public int getMemoryFragments() { return memoryFragments; }
+    public long getRiftCooldownUntil() { return riftCooldownUntil; }
+    public void setRiftCooldownUntil(long value) { riftCooldownUntil = Math.max(0L, value); }
     public DivineStage getStage() { return stage; }
     public boolean hasSeenIntro() { return introSeen; }
     public void markIntroSeen() { introSeen = true; }
@@ -124,6 +127,7 @@ public final class GodfallPlayerData {
         CompoundTag tag = new CompoundTag();
         tag.putInt("DeathCount", deathCount);
         tag.putInt("MemoryFragments", memoryFragments);
+        tag.putLong("RiftCooldownUntil", riftCooldownUntil);
         tag.putBoolean("IntroSeen", introSeen);
         tag.putString("Stage", stage.name());
 
@@ -142,6 +146,7 @@ public final class GodfallPlayerData {
         GodfallPlayerData data = new GodfallPlayerData();
         data.deathCount = Math.max(0, tag.getInt("DeathCount"));
         data.memoryFragments = Math.max(0, tag.getInt("MemoryFragments"));
+        data.riftCooldownUntil = Math.max(0L, tag.getLong("RiftCooldownUntil"));
         data.introSeen = tag.getBoolean("IntroSeen");
         data.stage = DivineStage.fromName(tag.getString("Stage"));
 
