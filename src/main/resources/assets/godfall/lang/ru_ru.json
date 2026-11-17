@@ -1,0 +1,13 @@
+{
+  "message.godfall.intro": "Наконец-то. Я уже начал думать, что ты не проснёшься.",
+  "command.godfall.status": "Состояние Создателя",
+  "command.godfall.stage": "Стадия: %s",
+  "command.godfall.memories": "Фрагменты памяти: %s",
+  "command.godfall.deaths": "Зафиксированные смерти: %s",
+  "stage.godfall.forgetting": "Забвение",
+  "stage.godfall.awakening": "Пробуждение",
+  "stage.godfall.spark": "Искра",
+  "stage.godfall.ascension": "Возвышение",
+  "stage.godfall.return": "Возвращение",
+  "stage.godfall.creator": "Создатель"
+}
