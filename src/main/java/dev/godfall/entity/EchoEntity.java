@@ -2,6 +2,7 @@ package dev.godfall.entity;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -9,11 +10,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.core.particles.ParticleTypes;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -61,16 +60,8 @@ public final class EchoEntity extends PathfinderMob {
         entityData.define(ECHO_ID, Optional.empty());
     }
 
-    public void configure(
-            UUID ownerId,
-            String ownerName,
-            UUID echoId,
-            int deathIndex,
-            EchoRole role,
-            String skinValue,
-            String skinSignature,
-            boolean slimArms
-    ) {
+    public void configure(UUID ownerId, String ownerName, UUID echoId, int deathIndex,
+                          EchoRole role, String skinValue, String skinSignature, boolean slimArms) {
         entityData.set(OWNER_UUID, Optional.of(ownerId));
         entityData.set(OWNER_NAME, ownerName == null ? "" : ownerName);
         entityData.set(ECHO_ID, Optional.of(echoId));
@@ -81,37 +72,14 @@ public final class EchoEntity extends PathfinderMob {
         entityData.set(SLIM_ARMS, slimArms);
     }
 
-    public UUID getOwnerUUID() {
-        return entityData.get(OWNER_UUID).orElse(null);
-    }
-
-    public String getOwnerName() {
-        return entityData.get(OWNER_NAME);
-    }
-
-    public UUID getEchoId() {
-        return entityData.get(ECHO_ID).orElse(null);
-    }
-
-    public int getDeathIndex() {
-        return entityData.get(DEATH_INDEX);
-    }
-
-    public EchoRole getRole() {
-        return EchoRole.fromOrdinal(entityData.get(ROLE));
-    }
-
-    public String getSkinValue() {
-        return entityData.get(SKIN_VALUE);
-    }
-
-    public String getSkinSignature() {
-        return entityData.get(SKIN_SIGNATURE);
-    }
-
-    public boolean hasSlimArms() {
-        return entityData.get(SLIM_ARMS);
-    }
+    public UUID getOwnerUUID() { return entityData.get(OWNER_UUID).orElse(null); }
+    public String getOwnerName() { return entityData.get(OWNER_NAME); }
+    public UUID getEchoId() { return entityData.get(ECHO_ID).orElse(null); }
+    public int getDeathIndex() { return entityData.get(DEATH_INDEX); }
+    public EchoRole getRole() { return EchoRole.fromOrdinal(entityData.get(ROLE)); }
+    public String getSkinValue() { return entityData.get(SKIN_VALUE); }
+    public String getSkinSignature() { return entityData.get(SKIN_SIGNATURE); }
+    public boolean hasSlimArms() { return entityData.get(SLIM_ARMS); }
 
     public GameProfile getOwnerProfile() {
         UUID ownerId = getOwnerUUID();
@@ -167,8 +135,13 @@ public final class EchoEntity extends PathfinderMob {
         } else if (distanceToSqr(owner) < 3.0D) {
             getNavigation().stop();
         }
-
         getLookControl().setLookAt(owner, 25.0F, 25.0F);
+    }
+
+    @Override
+    public boolean broadcastToPlayer(ServerPlayer player) {
+        UUID ownerId = getOwnerUUID();
+        return ownerId != null && ownerId.equals(player.getUUID());
     }
 
     @Override
