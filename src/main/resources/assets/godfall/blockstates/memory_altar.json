@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "activated=false": { "model": "godfall:block/memory_altar" },
+    "activated=true": { "model": "godfall:block/memory_altar_activated" }
+  }
+}
