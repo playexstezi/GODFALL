@@ -2,6 +2,7 @@ package dev.godfall.ability;
 
 import dev.godfall.data.GodfallPlayerData;
 import dev.godfall.data.GodfallSavedData;
+import dev.godfall.network.NetworkHandler;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -99,6 +100,10 @@ public final class RiftAbility {
                 SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 0.55F, 1.25F
         );
 
+        NetworkHandler.sendDialogue(
+                player,
+                "Хм. Пространство всё ещё помнит тебя. Жаль, что ты сам почти ничего не помнишь."
+        );
         player.sendSystemMessage(Component.literal("Пространство поддалось твоей воле."));
         return 1;
     }
