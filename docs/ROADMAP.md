@@ -16,6 +16,7 @@
 - [x] Owner-only entity tracking.
 - [x] Register Echo mob attributes.
 - [x] Add Guide, Warrior, Wanderer and Traitor personalities.
+- [x] Add owner-only interaction and distinct Russian dialogue for each Echo.
 - [ ] Verify exact skin rendering and spectral effect in a live client.
 - [ ] Test reconnect, dimension changes and multiplayer edge cases.
 
