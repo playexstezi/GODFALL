@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SAS",
+    "AEA",
+    "SAS"
+  ],
+  "key": {
+    "S": { "item": "minecraft:polished_deepslate" },
+    "A": { "item": "minecraft:amethyst_shard" },
+    "E": { "item": "minecraft:echo_shard" }
+  },
+  "result": {
+    "item": "godfall:memory_altar",
+    "count": 1
+  }
+}
