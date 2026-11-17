@@ -7,13 +7,19 @@ Run these checks on a disposable world before using the mod in a long-running sa
 2. Start a client with Forge 1.20.1.
 3. Start a dedicated Forge server and connect a client.
 4. Confirm the Observer's first line appears only for the joining player.
+5. Confirm the Memory Altar appears in the creative inventory and its block/item models load without missing-texture errors.
 
-## Memory progression
-1. As an operator, run /godfall give_fragment.
-2. Use the Memory Fragment from the hotbar.
-3. Run /godfall status and confirm the memory count increased and Rift is unlocked.
-4. Reconnect and confirm the progression remains saved.
-5. Repeat with a second account and confirm its progression is independent.
+## Memory Altar and progression
+1. In a disposable world, obtain an Echo Shard, four Amethyst Shards and four Polished Deepslate.
+2. Craft the Memory Altar and place it.
+3. Right-click it once; confirm it changes appearance and gives exactly one Memory Fragment.
+4. Right-click the activated altar again; confirm no second fragment is awarded.
+5. Break and replace the altar; confirm the new altar can be activated once.
+6. Fill the inventory before activation; confirm the fragment drops nearby instead of disappearing.
+7. Use the Memory Fragment from the hotbar.
+8. Run /godfall status and confirm the memory count increased and Rift is unlocked.
+9. Reconnect and confirm the progression remains saved.
+10. Repeat with a second account and confirm its progression is independent.
 
 ## Rift
 1. Press R, or use /godfall rift.
@@ -32,6 +38,7 @@ Run these checks on a disposable world before using the mod in a long-running sa
 7. Disconnect/reconnect and change dimensions; confirm Echoes are reconstructed without duplicates.
 
 ## Known unverified behavior
+- Memory Altar crafting, blockstate persistence, reward delivery and model rendering in a live client.
 - Exact custom-skin texture rendering across online/offline profiles.
 - Visual quality of the spectral tint and armor layer.
 - Multiplayer tracking edge cases under latency.
