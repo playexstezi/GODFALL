@@ -2,12 +2,18 @@ package dev.godfall.entity;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import dev.godfall.data.GodfallPlayerData;
+import dev.godfall.data.GodfallSavedData;
+import dev.godfall.dialogue.EchoDialogue;
+import dev.godfall.network.NetworkHandler;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
@@ -34,6 +40,8 @@ public final class EchoEntity extends PathfinderMob {
             SynchedEntityData.defineId(EchoEntity.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Optional<UUID>> ECHO_ID =
             SynchedEntityData.defineId(EchoEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+
+    private long lastSpokeAt = -1000L;
 
     public EchoEntity(EntityType<? extends PathfinderMob> entityType, Level level) {
         super(entityType, level);
@@ -97,6 +105,29 @@ public final class EchoEntity extends PathfinderMob {
             profile.getProperties().put("textures", textures);
         }
         return profile;
+    }
+
+    @Override
+    protected InteractionResult mobInteract(Player player, InteractionHand hand) {
+        UUID ownerId = getOwnerUUID();
+        if (ownerId == null || !ownerId.equals(player.getUUID())) {
+            return InteractionResult.PASS;
+        }
+
+        if (!level().isClientSide && player instanceof ServerPlayer serverPlayer) {
+            long now = level().getGameTime();
+            if (now - lastSpokeAt >= 40L) {
+                lastSpokeAt = now;
+                GodfallPlayerData data = GodfallSavedData.get(serverPlayer.getServer())
+                        .getOrCreate(serverPlayer.getUUID());
+                NetworkHandler.sendDialogue(
+                        serverPlayer,
+                        EchoDialogue.line(getRole(), data.getMemoryFragments(), random)
+                );
+            }
+        }
+
+        return InteractionResult.sidedSuccess(level().isClientSide);
     }
 
     @Override
