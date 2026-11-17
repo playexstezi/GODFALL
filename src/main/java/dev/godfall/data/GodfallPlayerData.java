@@ -8,7 +8,6 @@ import net.minecraft.world.item.ItemStack;
 import java.util.HashSet;
 import java.util.Set;
 public final class GodfallPlayerData {
-    private static final int MAX_DEATH_ECHOES = 16;
     private int deathCount;
     private int memoryFragments;
     private boolean introSeen;
@@ -52,7 +51,6 @@ public final class GodfallPlayerData {
         death.put("MainHand", player.getMainHandItem().save(new CompoundTag()));
         death.put("OffHand", player.getOffhandItem().save(new CompoundTag()));
         deathHistory.add(death);
-        while (deathHistory.size() > MAX_DEATH_ECHOES) deathHistory.remove(0);
     }
     public CompoundTag save() {
         CompoundTag tag = new CompoundTag();
