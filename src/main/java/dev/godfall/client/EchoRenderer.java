@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
 import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
-import net.minecraft.client.resources.PlayerSkin;
 import net.minecraft.resources.ResourceLocation;
 
 public final class EchoRenderer extends LivingEntityRenderer<EchoEntity, EchoPlayerModel> {
@@ -59,8 +58,7 @@ public final class EchoRenderer extends LivingEntityRenderer<EchoEntity, EchoPla
     @Override
     public ResourceLocation getTextureLocation(EchoEntity entity) {
         GameProfile profile = entity.getOwnerProfile();
-        PlayerSkin skin = Minecraft.getInstance().getSkinManager().getInsecureSkin(profile);
-        return skin.texture();
+        return Minecraft.getInstance().getSkinManager().getInsecureSkinLocation(profile);
     }
 
     @Override
