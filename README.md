@@ -10,6 +10,7 @@ You are the Creator, but your memories and powers are gone. The world remembers 
 - UUID-keyed persistent player progression stored in Overworld SavedData.
 - Death snapshots with player identity, dimension, position, rotation, skin profile, armor and held items.
 - Echo entities reconstructed from saved death history, with owner-only tracking, player skin, armor, held items and spectral particles.
+- Four Echo personalities with distinct Russian dialogue when the owner interacts with them.
 - Registered Echo mob attributes for runtime navigation and entity initialization.
 - The Observer's first-awakening line, death reactions and memory/ability reactions.
 - Memory Fragment item that advances personal memory progression.
@@ -41,6 +42,8 @@ Accept the Minecraft EULA in the generated run directory before starting the tes
 - /godfall rift — cast Rift after unlocking it.
 
 Use the Memory Fragment from your hand to absorb it. The first fragment unlocks Rift. Press R by default (changeable in Controls) or use /godfall rift. Rift moves the player up to five blocks forward, searches for a collision-free destination and has a five-second cooldown.
+
+Right-click an Echo to hear a line from its personality. The same Echo will not repeat dialogue continuously; it has a short speaking cooldown.
 
 ## Design principles
 
