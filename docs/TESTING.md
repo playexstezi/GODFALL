@@ -26,8 +26,10 @@ Run these checks on a disposable world before using the mod in a long-running sa
 1. Record a death in a disposable world.
 2. Respawn and confirm an Echo appears for the owner.
 3. Confirm its armor and held items match the saved death snapshot.
-4. Join with a second account and confirm that account cannot see the first player's Echo.
-5. Disconnect/reconnect and change dimensions; confirm Echoes are reconstructed without duplicates.
+4. Right-click the Echo and confirm it speaks in its assigned personality.
+5. Confirm repeated interaction is limited by the short dialogue cooldown.
+6. Join with a second account and confirm that account cannot see or interact with the first player's Echo.
+7. Disconnect/reconnect and change dimensions; confirm Echoes are reconstructed without duplicates.
 
 ## Known unverified behavior
 - Exact custom-skin texture rendering across online/offline profiles.
