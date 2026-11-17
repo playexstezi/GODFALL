@@ -12,6 +12,7 @@
   "stage.godfall.creator": "Создатель",
   "item.godfall.memory_fragment": "Фрагмент памяти",
   "item.godfall.memory_fragment.description": "Осколок воспоминания, которое не должно было пережить забвение.",
+  "block.godfall.memory_altar": "Алтарь памяти",
   "key.godfall.rift": "Использовать способность «Разлом»",
   "key.categories.godfall": "GODFALL"
 }
