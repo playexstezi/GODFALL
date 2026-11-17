@@ -28,7 +28,9 @@ public final class MemoryFragmentItem extends Item {
                     && data.unlockAbility("godfall:rift");
             savedData.setDirty();
 
-            stack.shrink(1);
+            if (!player.getAbilities().instabuild) {
+                stack.shrink(1);
+            }
 
             NetworkHandler.sendDialogue(
                     serverPlayer,
