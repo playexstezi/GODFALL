@@ -9,5 +9,7 @@
   "stage.godfall.spark": "Spark",
   "stage.godfall.ascension": "Ascension",
   "stage.godfall.return": "Return",
-  "stage.godfall.creator": "Creator"
+  "stage.godfall.creator": "Creator",
+  "item.godfall.memory_fragment": "Memory Fragment",
+  "item.godfall.memory_fragment.description": "A shard of a memory that should not have survived the forgetting."
 }
