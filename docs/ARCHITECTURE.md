@@ -8,7 +8,7 @@ Gameplay state is owned by the logical server. The client receives only the mess
 
 GodfallSavedData is stored in the Overworld's SavedData storage. It maps player UUIDs to GodfallPlayerData instances, so progress follows a player across dimensions and server restarts.
 
-The initial record stores the intro-seen flag, death counter, up to 16 death snapshots, memory-fragment count, divine stage and unlocked ability identifiers.
+The initial record stores the intro-seen flag, death counter, all recorded death snapshots, memory-fragment count, divine stage and unlocked ability identifiers.
 
 Death snapshots currently record UUID/name, dimension, coordinates, rotation, armor and held items. They are intended as the data source for Echoes of the Past.
 
