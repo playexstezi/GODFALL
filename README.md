@@ -17,7 +17,7 @@ The repository now contains the first development foundation:
 - /godfall status and /godfall memories commands.
 - GitHub Actions build workflow.
 
-This is a foundation, **not yet the complete mod**. Ghost entities, exact skin rendering, abilities, structures, bosses, dimensions, audio and the full story are still planned. Stored death snapshots are groundwork for Echoes; they are not yet rendered as ghost companions.
+This is a foundation, **not yet the complete mod**. Ghost entities, exact skin rendering, abilities, structures, bosses, dimensions, audio and the full story are still planned. Every recorded death is retained as snapshot data for future Echoes; the snapshots are not yet rendered as ghost companions.
 
 ## Build
 
