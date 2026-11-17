@@ -10,9 +10,12 @@ You are the Creator, but your memories and powers are gone. The world remembers 
 - UUID-keyed persistent player progression stored in Overworld SavedData.
 - Death snapshots with player identity, dimension, position, rotation, skin profile, armor and held items.
 - Echo entities reconstructed from saved death history, with owner-only tracking, player skin, armor, held items and spectral particles.
+- Registered Echo mob attributes for runtime navigation and entity initialization.
 - The Observer's first-awakening line, death reactions and memory/ability reactions.
 - Memory Fragment item that advances personal memory progression.
 - First divine ability, Rift, unlocked by the first memory fragment.
+- Configurable client key mapping for Rift (default: R).
+- Server-validated ability packet; the client never chooses its teleport destination.
 - Commands: /godfall status, /godfall memories, /godfall rift and operator-only /godfall give_fragment.
 - GitHub Actions build workflow.
 
@@ -37,7 +40,7 @@ Accept the Minecraft EULA in the generated run directory before starting the tes
 - /godfall give_fragment — operator-only test command to receive a Memory Fragment.
 - /godfall rift — cast Rift after unlocking it.
 
-Use the Memory Fragment from your hand to absorb it. The first fragment unlocks Rift. Rift moves the player up to five blocks forward, searches for a collision-free destination and has a five-second cooldown.
+Use the Memory Fragment from your hand to absorb it. The first fragment unlocks Rift. Press R by default (changeable in Controls) or use /godfall rift. Rift moves the player up to five blocks forward, searches for a collision-free destination and has a five-second cooldown.
 
 ## Design principles
 
@@ -47,4 +50,4 @@ Use the Memory Fragment from your hand to absorb it. The first fragment unlocks 
 - The Observer, the Old Self and the Darkness must not reveal the central truth too early.
 - Compatibility claims are made only after real modpack testing.
 
-See docs/ARCHITECTURE.md and docs/ROADMAP.md.
+See docs/ARCHITECTURE.md, docs/ROADMAP.md and docs/TESTING.md.
