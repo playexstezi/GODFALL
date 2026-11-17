@@ -14,6 +14,7 @@
 - [x] Reconstruct armor and held-item appearance.
 - [x] Capture player skin profile and model type.
 - [x] Owner-only entity tracking.
+- [x] Register Echo mob attributes.
 - [x] Add Guide, Warrior, Wanderer and Traitor personalities.
 - [ ] Verify exact skin rendering and spectral effect in a live client.
 - [ ] Test reconnect, dimension changes and multiplayer edge cases.
@@ -32,7 +33,10 @@
 - [x] Persistent five-second cooldown.
 - [x] Collision and world-border checks for destination.
 - [x] Portal particles, teleport sound and Observer reaction.
-- [ ] Add configurable ability balance and dedicated client keybind.
+- [x] Configurable client key mapping (default R).
+- [x] Server validates the ability request and calculates the destination.
+- [ ] Verify keybind and teleport behavior in a live client/server session.
+- [ ] Add configurable ability balance.
 - [ ] Implement the next Space ability: Spatial Step.
 
 ## Milestone 4 — World and first story chapter
